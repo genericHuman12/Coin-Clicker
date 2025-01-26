@@ -13,7 +13,7 @@ class Upgrade:
         self.rect.y = y_pos
         self.title_font = pygame.font.SysFont(None, 48)
         self.descrip_font = pygame.font.SysFont(None, 30)
-        self.bank_price = 0.20
+        self.bank_price = 1.75
         self.printer_price = 15.00
 
     def draw(self):
@@ -47,7 +47,7 @@ class Upgrade:
     def coin_upgrade_text(self):
         if self.game.upgradeNum == 0:
             text = "Upgrade to quarter"
-            self.coin_upgrade_price = 0.20
+            self.coin_upgrade_price = 0.75
             price = f"Price: ${self.coin_upgrade_price:.{2}f}"
             attribute = "Gives +1 cent/click"
         elif self.game.upgradeNum == 1:

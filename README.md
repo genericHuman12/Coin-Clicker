@@ -5,4 +5,4 @@ type of upgrade is called a bank, and you can buy multiple of them. Each one giv
 rises the more you buy. These are accesed by the button that says "Bank". Thank you for playing and hope you have fun.
 
 P.S. This is a bare bones version and is not very expansive. I might upgrade it over time in order to make it more
-fulfilling and fun.
+fulfilling and fun. In order to play, you need python and an editor, preferrably VS Code.

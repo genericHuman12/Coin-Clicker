@@ -18,6 +18,9 @@ class Coin:
         elif self.upgradeNum == 1:
             self.image = pygame.image.load(r'Coin Clicker\images\twenfiveCent.bmp')
             self.amt_gained = 0.25
+        elif self.upgradeNum == 2:
+            self.image = pygame.image.load(r'Coin Clicker\images\dollar.bmp')
+            self.amt_gained = 1.00
     
     def update(self):
         self.choose_image()

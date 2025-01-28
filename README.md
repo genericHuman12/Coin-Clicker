@@ -4,5 +4,4 @@ gives you 25 cents per click instead of one. This is accesed by the button below
 type of upgrade is called a bank, and you can buy multiple of them. Each one gives you 1 cent per second and the price 
 rises the more you buy. These are accesed by the button that says "Bank". I welcome feedback, so please let me know what you think. Thank you for playing and hope you have fun.
 
-P.S. This is a bare bones version and is not very expansive. I might upgrade it over time in order to make it more
-fulfilling and fun. In order to play, you need python and an editor that can use pygame, such as VS Code. All other files, including pygame, are included.
+P.S. In order to play, you need python and an editor that can use pygame, such as VS Code. All other files, including pygame, are included.

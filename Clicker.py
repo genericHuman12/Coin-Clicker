@@ -22,6 +22,7 @@ class Clicker:
         self.coin_ugrade = Upgrade(self, self.coin.rect.bottom)
         self.coin_ugrade.rect.height -= 50
         self.coin_ugrade.rect.midtop = self.coin.rect.midbottom
+        self.printer = Upgrade(self, self.bank.rect.bottom+20)
         pygame.display.set_caption("COIN CLICKER")
 
 
@@ -49,6 +50,8 @@ class Clicker:
         self.money_board.show_score()
         self.bank.draw()
         self.bank.draw_bank_text()
+        self.printer.draw()
+        self.printer.draw_printer_text()
         self.coin_ugrade.draw()
         self.coin_ugrade.draw_coin_text()
         pygame.display.flip()
@@ -77,13 +80,19 @@ class Clicker:
             if self.money >= self.bank.bank_price:
                 self.cps += 0.01
                 self.money -= self.bank.bank_price
-                self.bank.bank_price += self.bank.bank_price*0.10
+                self.bank.bank_price *= 1.10
         coin_ugrade_clicked = self.coin_ugrade.rect.collidepoint(mouse_pos)
         if coin_ugrade_clicked:
             if self.money >= self.coin_ugrade.coin_upgrade_price:
                 self.money -= self.coin_ugrade.coin_upgrade_price
                 self.upgradeNum += 1
                 self.coin.update()
+        printer_clicked = self.printer.rect.collidepoint(mouse_pos)
+        if printer_clicked:
+            if self.money >= self.printer.printer_price:
+                self.money -= self.printer.printer_price
+                self.cps += 1
+                self.printer.printer_price *= 1.10
 
     
 click = Clicker()

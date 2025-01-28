@@ -44,10 +44,35 @@ class Upgrade:
         self.screen.blit(self.bank_descrip2_image, self.bank_descrip2_image_rect)
         self.screen.blit(self.bank_price_image, self.bank_price_image_rect)
 
+    def printer_text(self):
+        title = "Printer"
+        price = f"Price: ${self.printer_price:.{2}f}"
+        descrip1 = "Gives:"
+        descrip2 = "+1 dollar per second"
+        self.printer_title_image = self.title_font.render(title, True, self.text_color, self.color)
+        self.printer_title_rect  = self.printer_title_image.get_rect()
+        self.printer_title_rect.midtop = self.rect.midtop
+        self.printer_descrip1_image  = self.descrip_font.render(descrip1, True, self.text_color, self.color)
+        self.printer_descrip2_image  = self.descrip_font.render(descrip2, True, self.text_color, self.color)
+        self.printer_descrip1_rect = self.printer_descrip1_image.get_rect()
+        self.printer_descrip2_rect = self.printer_descrip2_image.get_rect()
+        self.printer_descrip1_rect.midtop = self.printer_title_rect.midbottom
+        self.printer_descrip2_rect.midtop = self.printer_descrip1_rect.midbottom
+        self.printer_price_image = self.descrip_font.render(price, True, self.text_color, self.color)
+        self.printer_price_rect = self.printer_price_image.get_rect()
+        self.printer_price_rect.midtop = self.printer_descrip2_rect.midbottom
+
+    def draw_printer_text(self):
+        self.printer_text()
+        self.screen.blit(self.printer_title_image, self.printer_title_rect)
+        self.screen.blit(self.printer_descrip1_image, self.printer_descrip1_rect)
+        self.screen.blit(self.printer_descrip2_image, self.printer_descrip2_rect)
+        self.screen.blit(self.printer_price_image, self.printer_price_rect)
+
     def coin_upgrade_text(self):
         if self.game.upgradeNum == 0:
             text = "Upgrade to quarter"
-            self.coin_upgrade_price = 0.75
+            self.coin_upgrade_price = 0.20
             price = f"Price: ${self.coin_upgrade_price:.{2}f}"
             attribute = "Gives +1 cent/click"
         elif self.game.upgradeNum == 1:

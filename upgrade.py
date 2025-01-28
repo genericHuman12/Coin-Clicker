@@ -72,13 +72,18 @@ class Upgrade:
     def coin_upgrade_text(self):
         if self.game.upgradeNum == 0:
             text = "Upgrade to quarter"
-            self.coin_upgrade_price = 0.20
+            self.coin_upgrade_price = 0.50
             price = f"Price: ${self.coin_upgrade_price:.{2}f}"
             attribute = "Gives +1 cent/click"
         elif self.game.upgradeNum == 1:
+            text = "Upgrade to dollar"
+            self.coin_upgrade_price = 25.00
+            price = f"Price: ${self.coin_upgrade_price:.{2}f}"
+            attribute = "Gives +25 cents/click"
+        elif self.game.upgradeNum == 2:
             text = "MAX"
             price = ""
-            attribute = "Gives +25 cents/click"
+            attribute = "Gives +1 dollar/click"
             self.coin_upgrade_price = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.00
         self.coin_titl_img = self.title_font.render(text, True, self.text_color, self.color)
         self.coin_price_img  = self.descrip_font.render(price, True, self.text_color, self.color)

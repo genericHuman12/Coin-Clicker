@@ -35,7 +35,6 @@ class Clicker:
             self.money_board.prep_score()
             self.money_board.prep_cps()
             self._update_screen()
-            #await asyncio.sleep(0.1)
 
     def check_time(self):
         self.tn = time()
@@ -70,7 +69,6 @@ class Clicker:
                 mouse_pos = pygame.mouse.get_pos()
                 self.check_mouse_events(mouse_pos)
 
-
     def check_mouse_events(self, mouse_pos):
         coin_clicked = self.coin.rect.collidepoint(mouse_pos)
         if coin_clicked:
@@ -80,7 +78,7 @@ class Clicker:
             if self.money >= self.bank.bank_price:
                 self.cps += 0.01
                 self.money -= self.bank.bank_price
-                self.bank.bank_price *= 1.10
+                self.bank.bank_price *= 1.05
         coin_ugrade_clicked = self.coin_ugrade.rect.collidepoint(mouse_pos)
         if coin_ugrade_clicked:
             if self.money >= self.coin_ugrade.coin_upgrade_price:
@@ -92,7 +90,8 @@ class Clicker:
             if self.money >= self.printer.printer_price:
                 self.money -= self.printer.printer_price
                 self.cps += 1
-                self.printer.printer_price *= 1.10
+                self.printer.printer_price *= 1.05
+        
 
     
 click = Clicker()
